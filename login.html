@@ -7,7 +7,6 @@
     <link rel="stylesheeet" src="style.css"></link>
   </head>
   <body>
-    <p id="demo">hi</p>
     <script>
     var numbers = [];
     for(i = 0; i < 1000; i++){
@@ -69,7 +68,7 @@
     ];
     var newnumbers = [];
     var newletters = [];
-    for(x = 0; x < 1000; x++){
+    for(x = 0; x < 10000; x++){
       if(x % 2 == 0){
         newletters.push(letters[Math.floor((Math.random() * 52) + 1)]);
       }
@@ -79,7 +78,18 @@
         newletters.push(random);
       }
     }
-    document.getElementById("demo").innerHTML = newletters.join("");
+    var str1 = 0;
+    var str2 = str1 + 8;
+    for(z = 0; z < 10000; z++){
+      str1 += 8;
+      var ankit = newletters.join("");
+      var dahal = ankit.substr(str1,str2);
+      var btn = document.createElement("P");
+      var t = document.createTextNode(dahal);
+      btn.appendChild(t);
+      document.body.appendChild(btn);
+    }
+
     </script>
   </body>
 </html>
